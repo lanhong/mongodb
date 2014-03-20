@@ -12,6 +12,9 @@ RUN ln -s /bin/true /sbin/initctl
 RUN apt-get update
 RUN apt-get install mongodb-10gen
 # Create the MongoDB data directory
-RUN mkdir -p /backup/dockerRepository/mongodb/data/db
+RUN mkdir -p /data/db
+# mongod
 EXPOSE 27017
+# web console
+EXPOSE 28017
 ENTRYPOINT ["usr/bin/mongod"]
